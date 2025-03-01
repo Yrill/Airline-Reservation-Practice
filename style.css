@@ -1,8 +1,10 @@
-/* Reset default browser styles */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url('images/mainBg.png'); /* Ensure path is correct */
+    background-image: url('images/mainBg.png'); 
+    font-family: 'Saira Condensed', sans-serif;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,11 +14,12 @@ body {
     align-items: center; /* Center vertically */
 }
 
+
 /* Main container */
 .container {
     background: rgba(255, 255, 255, 0.95);
     padding: 2.5rem;
-    border-radius: 15px;
+    border-radius: 60px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     width: 90%;
     max-width: 600px;
@@ -24,20 +27,100 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+#reserveSeat .container {
+    width: 90vw; /* 90% of the viewport width */
+    max-width: 1200px; /* Prevent it from getting too wide */
+    height: 520px; /* Thin height */
+    padding: 1rem;
+    margin-top: 150px; /* Adjust this value as needed */
+   
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    
+}
+
+/* Main Menu Airline Design */
+#mainMenu .airlineContainerDesign {
+    border-radius: 30px; /* Fully rounded corners */
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
+    font-size: 70px;
+    font-weight: lighter;
+    padding: 10px 80px;
+    padding-left: 50px;
+    color: white;
+    font-family: 'Saira Condensed', sans-serif;
+    margin-bottom: 80px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Reserve Seat Airline Design */
+#reserveSeat .airlineContainerDesign, #changeSeat .airlineContainerDesign, #cancelSeat .airlineContainerDesign, #showTicket .airlineContainerDesign{
+    border-radius: 0px 30px 30px 0px; /* Asymmetrical rounding */
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
+    font-size: 70px;
+    font-weight: lighter;
+    padding: 10px 80px;
+    padding-left: 50px;
+    color: white;
+    font-family: 'Saira Condensed', sans-serif;
+    margin-bottom: 80px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+
+    /* Position it in the upper left corner */
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0; /* Remove any default margin */
+    width: auto; /* Keeps it from shrinking */
+    height: auto; /* Adjust to its content */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+.airlineDesign {
+    height: 90px;
+    width: auto;
+    padding-left: 20px;
+    transform: translateY(0);
+}
+.userNameDesign{
+    border-radius: 30px;
+    padding: 15px 20px;
+    width: 600px;
+    font-size: 20px;
+    font-weight: bold;
+    border-color: #51C3DE;
+    margin-right: 15px;
+}
+
+.seatButtons{
+    display: block;
+    flex-direction: row;
+}
+
 /* Button container */
 .button-group {
     display: flex;
     flex-direction: column;
     gap: 1rem; /* Space between buttons */
+    align-items: center; /* Center them horizontally */
+    margin-top: 2rem; /* Adjust the distance from other elements */
 }
 
 /* Buttons */
 button {
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
+    padding: 0.8rem 2rem;
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: lighter;
     border: none;
-    border-radius: 10px;
+    /* border-radius: 100px;
+   width: 400px; */
     cursor: pointer;
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
     color: white;
@@ -45,36 +128,67 @@ button {
     transition: all 0.3s ease;
 }
 
+#mainMenu .button-group button {
+    border-radius: 100px;
+    width: 400px;
+    cursor: pointer;
+}
+
+#reserveSeat .reserveSeat-buttons{
+    border-radius: 100px;
+}
+.seatButtons {
+    border-radius: 100px;
+    width: 400px;
+    cursor: pointer;
+}
+
+/* Hover effect */
 button:hover {
-    background: linear-gradient(135deg, #53D0D6 0%, #51C3DE 45%, #49A5F2 100%);
+    background: linear-gradient(135deg, #49c4f2 10%, #5178de 45%, #538bd6 100%);
     transform: translateY(-3px); /* Subtle lift effect */
 }
 
-/* Seats */
+/* Active/Clicked effect */
+button:active {
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 68%, #53D0D6 100%);
+    box-shadow: 0 3px 10px rgba(49, 165, 242, 0.6);
+    transform: translateY(2px); /* Slight press down effect */
+}
+
+/* Default seat styling */
 .seat {
     padding: 10px 20px;
     margin: 5px;
     font-size: 16px;
-    border: 1px solid #333;
+ /*   border: 1px solid #333;*/
     cursor: pointer;
-    background-color: #f0f0f0;
-    border-radius: 8px;
+    background-color: #f0f0f0; /* Default unselected color */
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect */
 .seat:hover {
-    background-color: #d0f0f9; /* Light blue hover */
-}
-
-.seat.selected {
-    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
+    background: linear-gradient(135deg, #49c4f2 10%, #5178de 45%, #538bd6 100%);
     color: white;
 }
 
-.seat.taken {
-    background-color: #ccc;
-    cursor: not-allowed;
+/* Selected seat (clicked) */
+.seat.selected {
+    background: linear-gradient(135deg, #8ef5b2 5%, #3dc6af 45%, #00c39b 90%);
+    color: white;
+    border-color: #51C3DE;
 }
+
+/* Taken seat (darker version) */
+.seat.taken {
+    background: linear-gradient(135deg, #1b28a3 0%, #266a8e 70%, #2c65c1 100%);
+    color: #949494;
+    cursor: not-allowed;
+    border-color: #333;
+}
+
+
 
 /* Fade-in animation */
 @keyframes fadeIn {

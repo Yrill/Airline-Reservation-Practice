@@ -9,57 +9,78 @@
 </head>
 <body>
   <!--Main Menut-->
-  <div id="mainMenu" class="container">
-    <h1>Welcome to Airline Seat Reservation</h1>
-    <div class="button-group"></div>
+  <div id="mainMenu">
+    <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
+    
+    <div class="button-group container">
       <button onclick="showPage('reserveSeat')">Reserve Seat</button>
       <button onclick="showPage('changeSeat')">Change Seat</button>
       <button onclick="showPage('cancelSeat')">Cancel Seat</button>
       <button onclick="showPage('showTicket')">Show Ticket</button>
-    </div>
+    </div>    
   </div>
   <!--Reserve Page-->
-  <div id="reserveSeat" style="display: none;" class="container">
-    <h2>Enter Your Name</h2>
-    <input type="text" id="usernameInput" placeholder="Enter your name">
-    <button onclick="saveUsername()">Save Name</button>
-    <h2>Reserve Seat</h2>
-    <h3>Economy Seats (Php 1,500)</h3>
-    <div id="economySeats"></div>
-    <h3>Deluxe Seats (Php 2,000)</h3>
-    <div id="deluxeSeats"></div>
-    <h3>Total Price: Php <span id="totalPrice">0</span></h3>
-    <button onclick="confirmReservation()">Confirm Reservation</button>
-    <button onclick="showPage('mainMenu')">Return</button>
+  <div id="reserveSeat" style="display: none;">
+    <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
+
+    <div class="reserveSeat-buttons container">
+      <h2>Enter Your Name</h2>
+      <input type="text" id="usernameInput" placeholder="Enter your name" class = "userNameDesign">
+      <button onclick="saveUsername()" class="reserveSeat-buttons">Save Name</button>
+      <div class="seatButtons">
+        <h2>Reserve Seat</h2>
+        <h3>Economy Seats (Php 1,500)</h3>
+        <div id="economySeats"></div>
+        <h3>Deluxe Seats (Php 2,000)</h3>
+        <div id="deluxeSeats"></div>
+        <h3>Total Price: Php <span id="totalPrice">0</span></h3>
+      </div>
+      <button onclick="confirmReservation()" class="reserveSeat-buttons">Confirm Reservation</button>
+      <button onclick="showPage('mainMenu')" class="reserveSeat-buttons">Return</button>
+    </div>
+
   </div>
   <!--Change Page-->
-  <div id="changeSeat" style="display: none;" class="container">
-    <h2>Change Seat</h2>
-    <p>Select a seat to change from:</p>
-    <div id="takenSeats"></div>
-    <p>Select a new seat:</p>
-    <div id="availableSeats"></div>
-    <div id="prompts"> </div>
-    <button onclick="confirmChange()">Confirm Change</button>
-    <button onclick="showPage('mainMenu')">Return</button>
+  <div id="changeSeat" style="display: none;">
+    <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
+    
+    <div  class="container">
+      <h2>Change Seat</h2>
+      <p>Select a seat to change from:</p>
+      <div id="takenSeats"></div>
+      <p>Select a new seat:</p>
+      <div id="availableSeats"></div>
+      <div id="prompts"> </div>
+      <button onclick="confirmChange()">Confirm Change</button>
+      <button onclick="showPage('mainMenu')">Return</button>
+    </div>
   </div>
   <!--Cancel Page-->
-  <div id="cancelSeat" style="display: none;" class="container">
-    <h2>Cancel Seat</h2>
-    <p>Select seats to cancel:</p>
-    <div id="cancelSeats"></div>
-    <button onclick="confirmCancellation()">Confirm Cancellation</button>
-    <button onclick="showPage('mainMenu')">Return</button>
+  <div id="cancelSeat" style="display: none;">
+    <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
+    
+    <div class="container">
+      <h2>Cancel Seat</h2>
+      <p>Select seats to cancel:</p>
+      <div id="cancelSeats"></div>
+      <button onclick="confirmCancellation()">Confirm Cancellation</button>
+      <button onclick="showPage('mainMenu')">Return</button>
+    </div>
+   
   </div>
   <!--Show Ticket Page-->
-  <div id="showTicket" style="display: none;" class="container">
-    <h2>Your Ticket</h2>
-    <p><strong>Name:</strong> <span id="userName"> </span></p>
-    <p><strong>Economy Seats:</strong> <span id="economyCount">0</span></p>
-    <p><strong>Deluxe Seats:</strong> <span id="deluxeCount">0</span></p>
-    <p><strong>Seats Number:</strong> <span id="seatNumbers">[]</span></p>
-    <h3>Total Price: Php <span id="ticketTotalPrice">0</span></h3>
-    <button onclick="showPage('mainMenu')">Return</button>
+  <div id="showTicket" style="display: none;">
+    <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
+    
+    <div class="container">
+      <h2>Your Ticket</h2>
+      <p><strong>Name:</strong> <span id="userName"> </span></p>
+      <p><strong>Economy Seats:</strong> <span id="economyCount">0</span></p>
+      <p><strong>Deluxe Seats:</strong> <span id="deluxeCount">0</span></p>
+      <p><strong>Seats Number:</strong> <span id="seatNumbers">[]</span></p>
+      <h3>Total Price: Php <span id="ticketTotalPrice">0</span></h3>
+      <button onclick="showPage('mainMenu')">Return</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
