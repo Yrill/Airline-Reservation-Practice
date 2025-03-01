@@ -3,179 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airline -Seat Reservation</title>
+  <title>Airline - Seat Change</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
 </head>
-  <body>
-    <!-- Main Menu -->
-    <div id="mainMenu">
-      <h1>Welcome to Airline Seat Reservation</h1>
-      <button onclick="showPage('reserveSeat')"> Reserve Seat </button>
-      <button onclick="showPage('changeSeat')"> Change Seat </button>
-      <button onclick="showPage('cancelSeat')"> Cancel Seat </button>
-      <button onclick="showPage('checkTicket')"> Check Ticket </button>
+<body>
+  <!--Main Menut-->
+  <div id="mainMenu" class="container">
+    <h1>Welcome to Airline Seat Reservation</h1>
+    <div class="button-group"></div>
+      <button onclick="showPage('reserveSeat')">Reserve Seat</button>
+      <button onclick="showPage('changeSeat')">Change Seat</button>
+      <button onclick="showPage('cancelSeat')">Cancel Seat</button>
+      <button onclick="showPage('showTicket')">Show Ticket</button>
     </div>
-    <!-- Reserve Seat -->
-    <div id="reserveSeat" style="display: none;">
-      <h1> Reserve Seat</h1>
-      <div>
-        <p> Economy Php 1,500</p>
-        <button onclick="seatNumber(1, 1500)"> 1 </button>
-        <button onclick="seatNumber(2, 1500)"> 2 </button>
-        <button onclick="seatNumber(3, 1500)"> 3 </button>
-        <button onclick="seatNumber(4, 1500)"> 4 </button>
-        <button onclick="seatNumber(5, 1500)"> 5 </button>
-      </div>
-      <div>
-        <p> Deluxe Php 2,000 </p>
-        <button onclick="seatNumber(6, 2000)"> 6 </button>
-        <button onclick="seatNumber(7, 2000)"> 7 </button>
-        <button onclick="seatNumber(8, 2000)"> 8 </button>
-        <button onclick="seatNumber(9, 2000)"> 9 </button>
-        <button onclick="seatNumber(10, 2000)"> 10 </button>
-      </div>
-      <p>Numbers clicked: <span id="seatTaken">[]</span></p>
-      <h2>Total Price: $<span id="totalPrice">0</span></h2>
+  </div>
+  <!--Reserve Page-->
+  <div id="reserveSeat" style="display: none;" class="container">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="usernameInput" placeholder="Enter your name">
+    <button onclick="saveUsername()">Save Name</button>
+    <h2>Reserve Seat</h2>
+    <h3>Economy Seats (Php 1,500)</h3>
+    <div id="economySeats"></div>
+    <h3>Deluxe Seats (Php 2,000)</h3>
+    <div id="deluxeSeats"></div>
+    <h3>Total Price: Php <span id="totalPrice">0</span></h3>
+    <button onclick="confirmReservation()">Confirm Reservation</button>
+    <button onclick="showPage('mainMenu')">Return</button>
+  </div>
+  <!--Change Page-->
+  <div id="changeSeat" style="display: none;" class="container">
+    <h2>Change Seat</h2>
+    <p>Select a seat to change from:</p>
+    <div id="takenSeats"></div>
+    <p>Select a new seat:</p>
+    <div id="availableSeats"></div>
+    <div id="prompts"> </div>
+    <button onclick="confirmChange()">Confirm Change</button>
+    <button onclick="showPage('mainMenu')">Return</button>
+  </div>
+  <!--Cancel Page-->
+  <div id="cancelSeat" style="display: none;" class="container">
+    <h2>Cancel Seat</h2>
+    <p>Select seats to cancel:</p>
+    <div id="cancelSeats"></div>
+    <button onclick="confirmCancellation()">Confirm Cancellation</button>
+    <button onclick="showPage('mainMenu')">Return</button>
+  </div>
+  <!--Show Ticket Page-->
+  <div id="showTicket" style="display: none;" class="container">
+    <h2>Your Ticket</h2>
+    <p><strong>Name:</strong> <span id="userName"> </span></p>
+    <p><strong>Economy Seats:</strong> <span id="economyCount">0</span></p>
+    <p><strong>Deluxe Seats:</strong> <span id="deluxeCount">0</span></p>
+    <p><strong>Seats Number:</strong> <span id="seatNumbers">[]</span></p>
+    <h3>Total Price: Php <span id="ticketTotalPrice">0</span></h3>
+    <button onclick="showPage('mainMenu')">Return</button>
+  </div>
 
-      <button onclick="showPage('mainMenu')"> Return </button>
-    </div>
-    <!-- Change Seat -->
-    <div id="changeSeat" style="display: none;">
-      <h1> Change Seat</h1>
-      <div>
-        <h2>Select the Seat(s) you want to change.</h2>
-        <p> Economy Php 1,500</p>
-        <button onclick="seatNumber(1, 1500)"> 1 </button>
-        <button onclick="seatNumber(2, 1500)"> 2 </button>
-        <button onclick="seatNumber(3, 1500)"> 3 </button>
-        <button onclick="seatNumber(4, 1500)"> 4 </button>
-        <button onclick="seatNumber(5, 1500)"> 5 </button>
-      </div>
-
-      <div>
-        <p> Deluxe Php 2,000 </p>
-        <button onclick="seatNumber(6, 2000)"> 6 </button>
-        <button onclick="seatNumber(7, 2000)"> 7 </button>
-        <button onclick="seatNumber(8, 2000)"> 8 </button>
-        <button onclick="seatNumber(9, 2000)"> 9 </button>
-        <button onclick="seatNumber(10, 2000)"> 10 </button>
-      </div>
-
-      <div>
-        <p>Current Seats Taken: <span id="seatTaken">[]</span></p>
-        <div id="takenSeats"></div>
-        <p>Select a new seat:</p>
-        <div id="availableSeats"></div>
-        
-        <button onclick="confirmChange()">Confirm Change</button>
-        <button onclick="showPage('mainMenu')"> Return </button>
-      </div>
-     
-    </div>
-    <!-- Cancel Seat -->
-    <div id="cancelSeat" style="display: none;"> 
-      <h1> Cancel Seat</h1>
-      <button onclick="showPage('mainMenu')"> Return </button>
-    </div>
-    <!-- Check Ticket  -->
-    <div id="checkTicket" style="display: none;">
-      <h1>Check Ticket </h1>
-      <button onclick="showPage('mainMenu')"> Return </button>
-    </div>
-
-  </body>
-  <script>
-    let seatTaken = [];
-    let totalPrice = 0;
-
-    function showPage(pageId) {
-        document.getElementById('reserveSeat').style.display = 'none';
-        document.getElementById('changeSeat').style.display = 'none';
-        document.getElementById('cancelSeat').style.display = 'none';
-        document.getElementById('checkTicket').style.display = 'none';
-        document.getElementById('mainMenu').style.display = 'none';
-        document.getElementById(pageId).style.display = 'block';
-
-        if (pageId === 'changeSeat') {
-        document.getElementById('currentSeats').textContent = JSON.stringify(seatTaken);
-      }
-    }
-
-    function seatNumber(num, price){
-      if (seatTaken.includes(num)){
-        alert("This seat is already Taken!");
-        return;
-      }
-      console.log("Seat Taken:", seatTaken);
-      seatTaken.push(num)
-      totalPrice += price;
-      updateDisplay();
-    }
-
-    function changeSeat() {
-      const oldSeat = parseInt(document.getElementById('oldSeat').value);
-      const newSeat = parseInt(document.getElementById('newSeat').value);
-
-      if (!seatTaken.includes(oldSeat)) {
-        alert("You don't have this seat reserved!");
-        return;
-      }
-
-      if (seatTaken.includes(newSeat)) {
-        alert("The new seat is already taken!");
-        return;
-      }
-      const oldSeatPrice = seatPrices[oldSeat];
-      const newSeatPrice = seatPrices[newSeat];
-
-      seatTaken = seatTaken.filter(seat => seat !== oldSeat); // remove old seat
-      seatTaken.push(newSeat); // add new seat
-
-      // Adjust price
-      totalPrice = totalPrice - oldSeatPrice + newSeatPrice;
-
-      updateDisplay();
-      showPage('reserveSeat');
-    }
-
-  /*
-    function removeNumber() {
-      const numRemove = parseInt(document.getElementById("removeInput").value);
-      const index = clickedNumbers.indexOf(numToRemove);
-
-      if (index !== -1) { // If number exists in array
-          clickedNumbers.splice(index, 1); // Remove it
-      } else {
-          alert("Number not found!");
-      }
-      updateDisplay();
-    }
-  */
-   
-    function updateDisplay(){
-      document.getElementById("seatTaken").textContent = JSON.stringify(seatTaken);
-      document.getElementById("totalPrice").textContent = totalPrice;
-    }
-
-    
-   /*
-    <h1>Click a button to save its number</h1>
-
-    <button onclick="saveNumber(1)">1</button>
-    <button onclick="saveNumber(2)">2</button>
-    <button onclick="saveNumber(3)">3</button>
-
-    <p id="savedNumber">Saved number: None</p>
-
-    <script>
-        // Variable to store the saved number
-        let savedNumber = null;
-
-        // Function to save the clicked number
-        function saveNumber(num) {
-            savedNumber = num; // Save the clicked number
-            console.log("Saved number:", savedNumber); // Log it to the console
-            document.getElementById("savedNumber").textContent = "Saved number: " + savedNumber; // Display it on the page
-        }
-     */ 
-  </script>
+  <script src="script.js"></script>
+</body>
 </html>
