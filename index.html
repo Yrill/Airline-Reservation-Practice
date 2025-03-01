@@ -22,37 +22,36 @@
   <!--Reserve Page-->
   <div id="reserveSeat" style="display: none;">
     <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
-
-    <div class="reserveSeat-buttons container">
-      <h2>Enter Your Name</h2>
-      <input type="text" id="usernameInput" placeholder="Enter your name" class = "userNameDesign">
-      <button onclick="saveUsername()" class="reserveSeat-buttons">Save Name</button>
+    <div class="container">
+      <div class="input-container">
+        <h2>Enter Your Name: </h2>
+        <input type="text" id="usernameInput" placeholder="Enter your name" class = "userNameDesign">
+        <button onclick="saveUsername()" class="inputButton">Save Name</button>
+      </div>
       <div class="seatButtons">
-        <h2>Reserve Seat</h2>
+        <h2>Please select your seat(s) for reservation:</h2>
         <h3>Economy Seats (Php 1,500)</h3>
         <div id="economySeats"></div>
         <h3>Deluxe Seats (Php 2,000)</h3>
         <div id="deluxeSeats"></div>
-        <h3>Total Price: Php <span id="totalPrice">0</span></h3>
+        <h4>Total Price: Php <span id="totalPrice">0</span></h4>
       </div>
-      <button onclick="confirmReservation()" class="reserveSeat-buttons">Confirm Reservation</button>
-      <button onclick="showPage('mainMenu')" class="reserveSeat-buttons">Return</button>
+      <button onclick="confirmReservation()" class="action-buttons">Confirm Reservation</button>
+      <button onclick="showPage('mainMenu')" class="action-buttons">Return</button>
     </div>
-
   </div>
   <!--Change Page-->
   <div id="changeSeat" style="display: none;">
     <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
     
     <div  class="container">
-      <h2>Change Seat</h2>
-      <p>Select a seat to change from:</p>
+      <h2>Select a seat you want to change:</h2>
       <div id="takenSeats"></div>
-      <p>Select a new seat:</p>
+      <h2>Select a new seat:</h2>
       <div id="availableSeats"></div>
       <div id="prompts"> </div>
-      <button onclick="confirmChange()">Confirm Change</button>
-      <button onclick="showPage('mainMenu')">Return</button>
+      <button onclick="confirmChange()" class="action-buttons">Confirm Change</button>
+      <button onclick="showPage('mainMenu')" class="action-buttons">Return</button>
     </div>
   </div>
   <!--Cancel Page-->
@@ -60,11 +59,10 @@
     <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
     
     <div class="container">
-      <h2>Cancel Seat</h2>
-      <p>Select seats to cancel:</p>
+      <h2>Select seat(s) you want to cancel:</h2>
       <div id="cancelSeats"></div>
-      <button onclick="confirmCancellation()">Confirm Cancellation</button>
-      <button onclick="showPage('mainMenu')">Return</button>
+      <button onclick="confirmCancellation()" class="action-buttons">Confirm Cancellation</button>
+      <button onclick="showPage('mainMenu')" class="action-buttons">Return</button>
     </div>
    
   </div>
@@ -73,13 +71,28 @@
     <h1 class="airlineContainerDesign">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="airlineDesign"></h1>
     
     <div class="container">
-      <h2>Your Ticket</h2>
-      <p><strong>Name:</strong> <span id="userName"> </span></p>
-      <p><strong>Economy Seats:</strong> <span id="economyCount">0</span></p>
-      <p><strong>Deluxe Seats:</strong> <span id="deluxeCount">0</span></p>
-      <p><strong>Seats Number:</strong> <span id="seatNumbers">[]</span></p>
-      <h3>Total Price: Php <span id="ticketTotalPrice">0</span></h3>
-      <button onclick="showPage('mainMenu')">Return</button>
+      <h2>Your Ticket:</h2>
+      <div class="ticketDesign">
+        <h1 class="ticketairlineDesignContainer">Airline <img src="images/airlineDesign.png" alt="Airline Design" class="ticketairlineDesign"></h1>
+
+        <div class="class-seats-container">
+          <div class="classes box-container">
+            <h1>Class(es):</h1>
+            <p>Economy Seats:<span id="economyCount">0</span></p>
+            <p>Deluxe Seats:<span id="deluxeCount">0</span></p>
+          </div>
+          <div class="seats box-container">
+            <h1>Seat(s) Number:</h1>
+            <p><span id="seatNumbers">[]</span></p>
+          </div>
+        </div>
+  
+        <div class="name-total-container">
+          <h3> Name: <span id="userName"> </span></h3>
+          <h3>Total Price: Php <span id="ticketTotalPrice">0</span></h3>
+        </div>
+      </div>
+      <button onclick="showPage('mainMenu')" class="action-buttons">Return</button>
     </div>
   </div>
 

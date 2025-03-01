@@ -27,7 +27,7 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-#reserveSeat .container {
+#reserveSeat .container, #changeSeat .container, #cancelSeat .container, #showTicket .container{
     width: 90vw; /* 90% of the viewport width */
     max-width: 1200px; /* Prevent it from getting too wide */
     height: 520px; /* Thin height */
@@ -58,7 +58,7 @@ body {
 
 /* Reserve Seat Airline Design */
 #reserveSeat .airlineContainerDesign, #changeSeat .airlineContainerDesign, #cancelSeat .airlineContainerDesign, #showTicket .airlineContainerDesign{
-    border-radius: 0px 30px 30px 0px; /* Asymmetrical rounding */
+    border-radius: 0px 0px 30px 0px; /* Asymmetrical rounding */
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
     font-size: 70px;
     font-weight: lighter;
@@ -87,19 +87,174 @@ body {
     padding-left: 20px;
     transform: translateY(0);
 }
-.userNameDesign{
-    border-radius: 30px;
-    padding: 15px 20px;
-    width: 600px;
-    font-size: 20px;
-    font-weight: bold;
-    border-color: #51C3DE;
-    margin-right: 15px;
+
+.ticketDesign {
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%); 
+    /* Light background color for the ticket */
+    border: 2px solid #51C3DE;  /* Border color */
+    border-radius: 10px;  /* Rounded corners for a more ticket-like look */
+      /* Padding inside the ticket */
+    width: 1000px;  /* Set width of the ticket */
+    height: auto;
+    margin: 20px auto;  /* Center the ticket horizontally */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Add a slight shadow for depth */
+    font-family: 'Arial', sans-serif;  /* Choose a font */
 }
 
-.seatButtons{
-    display: block;
-    flex-direction: row;
+.ticketairlineDesignContainer {
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%); /* Gradient background */
+    border-radius: 30px 0px 30px 0px; /* Asymmetrical rounding for the corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    font-size: 50px;
+    font-weight: lighter;
+    padding: 10px 80px;
+    padding-left: 50px;
+    color: white;
+    font-family: 'Saira Condensed', sans-serif;
+
+    width: 500px;
+    margin-top: -0px;
+    line-height: 1;
+    display: flex;
+    align-items: center; /* Align the content vertically in the middle */
+    justify-content: flex-start; /* Align the content horizontally to the left */
+    position: relative; /* Ensure the content stays in place */
+}
+
+.ticketairlineDesign {
+    height: 50px; /* Set the logo height */
+    width: auto; /* Set the logo width */
+    margin-left: 20px; /* Space between the text and logo */
+    object-fit: contain; /* Maintain the aspect ratio of the image */
+}
+
+.class-seats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: rgb(135, 135, 135);
+    
+}
+
+.box-container {
+    border: 2px solid #51C3DE;  /* Box border */
+    border-radius: 8px;  /* Rounded corners for the box */
+    padding: 15px;  /* Padding inside the box */
+    width: 45%;  /* Each box takes up 45% of the container */
+    background-color: #f9f9f9;  /* Light background color for the boxes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Slight shadow for depth */
+    margin: 20px 50px 10px 50px;
+}
+
+.classes, .seats {
+    width: 45%;  /* Each takes up 45% of the container */
+}
+
+.name-total-container {
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 400px; /* Add space between elements */
+    justify-content: flex-start; /* Align items to the left */
+    margin: 20px 50px 20px 50px;
+}
+
+#showTicket h3 {
+    margin: 10px 0;
+}
+
+#showTicket h1 {
+    margin: 5px 5px 15px 5px;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: left; 
+}
+
+#showTicket p {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+h2 {
+    margin: 0; /* Remove default margins */
+}
+
+#changeSeat p, #cancelSeat p{
+    color: #a70800;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.seatButtons h2, #changeSeat h2, #cancelSeat h2, #showTicket h2{
+    color: #464a53;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: left;
+    margin: 0px; /* Remove any default margin */
+    padding: 10px 40px;
+}
+
+.seatButtons h3, #changeSeat h3{
+    border-radius: 10px; 
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 50px;
+    color: white;
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin: 0px auto; /* Centers the whole h3 element */
+    width: fit-content; 
+    box-shadow: 0 5px 15px rgba(25, 108, 163, 0.4);
+}
+
+.seatButtons h4{
+    border-radius: 10px; 
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 50px;
+    color: white;
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin: 0px auto; /* Centers the whole h3 element */
+    
+    box-shadow: 0 5px 15px rgba(25, 108, 163, 0.4);
+}
+  
+.input-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 15px; /* Add space between elements */
+    justify-content: flex-start; /* Align items to the left */
+    padding-top: 5px;
+    padding: 0px 100px;
+    color: #464a53;
+    font-size: 15px;
+  }
+
+  input:focus::placeholder {
+    color: transparent; /* Hides the placeholder */
+    outline: none; /* Removes the default focus outline */
+}
+
+.userNameDesign{
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 600px;
+    font-size: 15px;
+    font-weight: light;
+    border-color: #51C3DE;
+    
 }
 
 /* Button container */
@@ -115,7 +270,6 @@ body {
 button {
     padding: 0.8rem 2rem;
     margin-top: 0.5rem;
-    font-size: 1.6rem;
     font-family: 'Saira Condensed', sans-serif;
     font-weight: lighter;
     border: none;
@@ -132,16 +286,60 @@ button {
     border-radius: 100px;
     width: 400px;
     cursor: pointer;
+    font-size: 1.6rem;
+}
+.inputButton{
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 5px 25px;
+    font-size: 20px;
 }
 
-#reserveSeat .reserveSeat-buttons{
-    border-radius: 100px;
+.action-buttons, #cancelSeat .action-buttons{
+    border-radius: 10px;
+    margin: 15px 25px 15px 25px;
+    padding: 5px 25px;
+    font-size: 20px;
 }
-.seatButtons {
-    border-radius: 100px;
-    width: 400px;
+
+#reserveSeat .seatButtons button{
+    font-size: 20px;
+    border-radius: 10px;
     cursor: pointer;
+    margin: 25px 40px;
+    flex-direction: row;
+    font-weight: bolder;
 }
+
+#changeSeat button {
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px 40px;
+    flex-direction: row;
+    font-weight: bolder;
+}
+
+#cancelSeat button {
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 50px 40px 50px 40px;
+    flex-direction: row;
+    font-weight: bolder;
+}
+/*
+#reserveSeat .seatButtons button {
+    border-radius: 50px;
+    padding: 10px 20px;
+    background-color: #49A5F2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    align-items: center;
+}
+*/
 
 /* Hover effect */
 button:hover {
