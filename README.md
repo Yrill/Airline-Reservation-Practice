@@ -32,6 +32,6 @@ This project is part of my coding practice after a break. While it's complete, t
 
 1. Download the project or clone the repository:
    ```bash
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/yrill/Airline-Reservation-Practice.git
    ```
 2. Open the folder and double-click the index.html file to run it in your browser.
