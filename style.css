@@ -39,58 +39,48 @@ body {
     
 }
 
-/* Main Menu Airline Design */
-#mainMenu .airlineContainerDesign {
-    border-radius: 30px; 
+/* Shared Airline Container Design */
+.airlineContainerDesign {
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
-    font-size: 70px;
     font-weight: lighter;
-    padding: 10px 80px;
-    padding-left: 50px;
+    padding: 10px 80px 10px 50px;
     color: white;
     font-family: 'Saira Condensed', sans-serif;
-    margin-bottom: 80px;
     line-height: 1;
     display: flex;
     align-items: center;
 }
 
-/* Reserve Seat Airline Design */
-#reserveSeat .airlineContainerDesign, #changeSeat .airlineContainerDesign, #cancelSeat .airlineContainerDesign, #showTicket .airlineContainerDesign{
-    border-radius: 0px 0px 30px 0px; 
-    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
-    font-size: 70px;
-    font-weight: lighter;
-    padding: 10px 80px;
-    padding-left: 50px;
-    color: white;
-    font-family: 'Saira Condensed', sans-serif;
+/* Main Menu Design */
+#mainMenu .airlineContainerDesign {
+    border-radius: 30px; 
     margin-bottom: 80px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
+    font-size: 70px;
+}
+
+/* Other Sections' Design */
+#reserveSeat .airlineContainerDesign,
+#changeSeat .airlineContainerDesign,
+#cancelSeat .airlineContainerDesign,
+#showTicket .airlineContainerDesign {
+    border-radius: 0 0 30px 0;
     position: fixed;
     top: 0;
     left: 0;
-    margin: 0; /* Remove any default margin */
-    width: auto; /* Keeps it from shrinking */
-    height: auto; /* Adjust to its content */
-    z-index: 1000; /* Ensures it's above other elements */
+    margin: 0;
+    z-index: 1000; 
+    font-size: 70px;
 }
-
 .airlineDesign {
     height: 90px;
     width: auto;
     padding-left: 20px;
-    transform: translateY(0);
 }
 
 .ticketDesign {
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%); 
     border: 2px solid #51C3DE;  
     border-radius: 10px;  
-    width: auto;  
-    height: auto;
     margin: 20px 100px auto 100px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
     font-family: 'Arial', sans-serif; 
@@ -112,8 +102,8 @@ body {
     margin-top: 0px;
     line-height: 1;
     display: flex;
-    align-items: center; /* Align the content vertically in the middle */
-    justify-content: flex-start; /* Align the content horizontally to the left */
+    align-items: center; 
+    justify-content: flex-start; 
     position: relative; 
 }
 
@@ -129,7 +119,6 @@ body {
     justify-content: space-between;
     margin-bottom: 20px;
     color: rgb(135, 135, 135);
-    
 }
 
 .box-container {
@@ -142,8 +131,6 @@ body {
 }
 
 .classes, .seats {
-    /* Each takes up 45% of the container */
-  
     width: 45%; 
 }
 
@@ -176,7 +163,7 @@ body {
 }
 
 h2 {
-    margin: 0; /* Remove default margins */
+    margin: 0;
 }
 
 #changeSeat p, #cancelSeat p{
@@ -185,7 +172,10 @@ h2 {
     font-weight: bold;
 }
 
-.seatButtons h2, #changeSeat h2, #cancelSeat h2, #showTicket h2{
+.seatButtons h2, 
+#changeSeat h2, 
+#cancelSeat h2, 
+#showTicket h2{
     color: #464a53;
     font-size: 23px;
     font-weight: bold;
@@ -194,7 +184,8 @@ h2 {
     padding: 10px 40px;
 }
 
-.seatButtons h3, #changeSeat h3{
+.seatButtons h3, 
+#changeSeat h3{
     border-radius: 10px; 
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
     font-size: 25px;
@@ -264,8 +255,6 @@ input:focus::placeholder {
 
 /* Buttons */
 button {
-    padding: 0.8rem 2rem;
-    margin-top: 0.5rem;
     font-family: 'Saira Condensed', sans-serif;
     font-weight: lighter;
     border: none;
@@ -277,6 +266,8 @@ button {
 }
 
 #mainMenu .button-group button {
+    padding: 0.8rem 2rem;
+    margin-top: 0.5rem;
     border-radius: 100px;
     width: 400px;
     cursor: pointer;
@@ -289,7 +280,8 @@ button {
     font-size: 20px;
 }
 
-.action-buttons, #cancelSeat .action-buttons{
+.action-buttons, 
+#cancelSeat .action-buttons{
     border-radius: 10px;
     margin: 15px 25px 15px 25px;
     padding: 5px 25px;
