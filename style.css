@@ -8,12 +8,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center;
 }
-
 
 /* Main container */
 .container {
@@ -25,15 +24,15 @@ body {
     max-width: 600px;
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
+    position: relative
 }
 
 #reserveSeat .container, #changeSeat .container, #cancelSeat .container, #showTicket .container{
-    width: 90vw; /* 90% of the viewport width */
-    max-width: 1200px; /* Prevent it from getting too wide */
-    height: 520px; /* Thin height */
+    width: 90vw; 
+    max-width: 1200px; 
+    height: 520px; 
     padding: 1rem;
-    margin-top: 150px; /* Adjust this value as needed */
-   
+    margin-top: 150px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 30px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
@@ -42,7 +41,7 @@ body {
 
 /* Main Menu Airline Design */
 #mainMenu .airlineContainerDesign {
-    border-radius: 30px; /* Fully rounded corners */
+    border-radius: 30px; 
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
     font-size: 70px;
     font-weight: lighter;
@@ -58,7 +57,7 @@ body {
 
 /* Reserve Seat Airline Design */
 #reserveSeat .airlineContainerDesign, #changeSeat .airlineContainerDesign, #cancelSeat .airlineContainerDesign, #showTicket .airlineContainerDesign{
-    border-radius: 0px 0px 30px 0px; /* Asymmetrical rounding */
+    border-radius: 0px 0px 30px 0px; 
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
     font-size: 70px;
     font-weight: lighter;
@@ -70,8 +69,6 @@ body {
     line-height: 1;
     display: flex;
     align-items: center;
-
-    /* Position it in the upper left corner */
     position: fixed;
     top: 0;
     left: 0;
@@ -90,20 +87,18 @@ body {
 
 .ticketDesign {
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%); 
-    /* Light background color for the ticket */
-    border: 2px solid #51C3DE;  /* Border color */
-    border-radius: 10px;  /* Rounded corners for a more ticket-like look */
-      /* Padding inside the ticket */
-    width: 1000px;  /* Set width of the ticket */
+    border: 2px solid #51C3DE;  
+    border-radius: 10px;  
+    width: auto;  
     height: auto;
-    margin: 20px auto;  /* Center the ticket horizontally */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Add a slight shadow for depth */
-    font-family: 'Arial', sans-serif;  /* Choose a font */
+    margin: 20px 100px auto 100px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    font-family: 'Arial', sans-serif; 
 }
 
 .ticketairlineDesignContainer {
-    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%); /* Gradient background */
-    border-radius: 30px 0px 30px 0px; /* Asymmetrical rounding for the corners */
+    background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%); 
+    border-radius: 30px 0px 30px 0px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     font-size: 50px;
     font-weight: lighter;
@@ -111,14 +106,15 @@ body {
     padding-left: 50px;
     color: white;
     font-family: 'Saira Condensed', sans-serif;
-
-    width: 500px;
-    margin-top: -0px;
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    margin-top: 0px;
     line-height: 1;
     display: flex;
     align-items: center; /* Align the content vertically in the middle */
     justify-content: flex-start; /* Align the content horizontally to the left */
-    position: relative; /* Ensure the content stays in place */
+    position: relative; 
 }
 
 .ticketairlineDesign {
@@ -137,17 +133,18 @@ body {
 }
 
 .box-container {
-    border: 2px solid #51C3DE;  /* Box border */
-    border-radius: 8px;  /* Rounded corners for the box */
-    padding: 15px;  /* Padding inside the box */
-    width: 45%;  /* Each box takes up 45% of the container */
-    background-color: #f9f9f9;  /* Light background color for the boxes */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Slight shadow for depth */
+    border: 2px solid #51C3DE;
+    border-radius: 8px; 
+    padding: 15px;  
+    background-color: #f9f9f9;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
     margin: 20px 50px 10px 50px;
 }
 
 .classes, .seats {
-    width: 45%;  /* Each takes up 45% of the container */
+    /* Each takes up 45% of the container */
+  
+    width: 45%; 
 }
 
 .name-total-container {
@@ -193,7 +190,7 @@ h2 {
     font-size: 23px;
     font-weight: bold;
     text-align: left;
-    margin: 0px; /* Remove any default margin */
+    margin: 0px;
     padding: 10px 40px;
 }
 
@@ -209,7 +206,7 @@ h2 {
     display: flex;
     align-items: center;
     height: auto;
-    margin: 0px auto; /* Centers the whole h3 element */
+    margin: 0px auto;
     width: fit-content; 
     box-shadow: 0 5px 15px rgba(25, 108, 163, 0.4);
 }
@@ -227,7 +224,6 @@ h2 {
     align-items: center;
     height: auto;
     margin: 0px auto; /* Centers the whole h3 element */
-    
     box-shadow: 0 5px 15px rgba(25, 108, 163, 0.4);
 }
   
@@ -242,7 +238,7 @@ h2 {
     font-size: 15px;
   }
 
-  input:focus::placeholder {
+input:focus::placeholder {
     color: transparent; /* Hides the placeholder */
     outline: none; /* Removes the default focus outline */
 }
@@ -262,8 +258,8 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 1rem; /* Space between buttons */
-    align-items: center; /* Center them horizontally */
-    margin-top: 2rem; /* Adjust the distance from other elements */
+    align-items: center; 
+    margin-top: 2rem; 
 }
 
 /* Buttons */
@@ -273,8 +269,6 @@ button {
     font-family: 'Saira Condensed', sans-serif;
     font-weight: lighter;
     border: none;
-    /* border-radius: 100px;
-   width: 400px; */
     cursor: pointer;
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 45%, #53D0D6 100%);
     color: white;
@@ -328,65 +322,44 @@ button {
     flex-direction: row;
     font-weight: bolder;
 }
-/*
-#reserveSeat .seatButtons button {
-    border-radius: 50px;
-    padding: 10px 20px;
-    background-color: #49A5F2;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 10px;
-    align-items: center;
-}
-*/
 
-/* Hover effect */
 button:hover {
     background: linear-gradient(135deg, #49c4f2 10%, #5178de 45%, #538bd6 100%);
-    transform: translateY(-3px); /* Subtle lift effect */
+    transform: translateY(-3px); 
 }
 
-/* Active/Clicked effect */
 button:active {
     background: linear-gradient(135deg, #49A5F2 0%, #51C3DE 68%, #53D0D6 100%);
     box-shadow: 0 3px 10px rgba(49, 165, 242, 0.6);
-    transform: translateY(2px); /* Slight press down effect */
+    transform: translateY(2px);
 }
 
-/* Default seat styling */
 .seat {
     padding: 10px 20px;
     margin: 5px;
     font-size: 16px;
- /*   border: 1px solid #333;*/
     cursor: pointer;
-    background-color: #f0f0f0; /* Default unselected color */
+    background-color: #f0f0f0; 
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect */
 .seat:hover {
     background: linear-gradient(135deg, #49c4f2 10%, #5178de 45%, #538bd6 100%);
     color: white;
 }
 
-/* Selected seat (clicked) */
 .seat.selected {
     background: linear-gradient(135deg, #8ef5b2 5%, #3dc6af 45%, #00c39b 90%);
     color: white;
     border-color: #51C3DE;
 }
 
-/* Taken seat (darker version) */
 .seat.taken {
     background: linear-gradient(135deg, #1b28a3 0%, #266a8e 70%, #2c65c1 100%);
     color: #949494;
     cursor: not-allowed;
     border-color: #333;
 }
-
-
 
 /* Fade-in animation */
 @keyframes fadeIn {
