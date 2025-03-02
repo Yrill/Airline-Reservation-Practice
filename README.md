@@ -35,3 +35,7 @@ This project is part of my coding practice after a break. While it's complete, t
    git clone https://github.com/yrill/Airline-Reservation-Practice.git
    ```
 2. Open the folder and double-click the index.html file to run it in your browser.
+
+## 🌐 View the Live Project
+
+[View Project](https://yrill.github.io/Airline-Reservation-Practice/)
